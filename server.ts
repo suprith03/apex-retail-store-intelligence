@@ -1119,11 +1119,17 @@ async function startServer() {
     });
   }
 
-  app.listen(PORT, "0.0.0.0", () => {
-    console.log(`Server launched and running on host 0.0.0.0, port ${PORT}`);
-  });
+  if (process.env.VERCEL === "1") {
+    console.log("Server initialized in Vercel Serverless Function wrapper.");
+  } else {
+    app.listen(PORT, "0.0.0.0", () => {
+      console.log(`Server launched and running on host 0.0.0.0, port ${PORT}`);
+    });
+  }
 }
 
 startServer().catch((err) => {
   console.error("Failed to start Store Intelligence Express server:", err);
 });
+
+export default app;
