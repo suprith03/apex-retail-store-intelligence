@@ -1,0 +1,6 @@
+{
+  "name": "Apex Retail Store Intelligence",
+  "description": "A full-stack store intelligence pipeline that ingests retail footage events, tracks customer flows, calculates conversion rates, analyzes queue build-up, and surfaces real-time store metrics.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

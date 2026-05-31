@@ -1,0 +1,22 @@
+version: "3.8"
+
+services:
+  intelligence_api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: apex_store_intelligence_api
+    ports:
+      - "3000:3000"
+    environment:
+      - HOST=0.0.0.0
+      - PORT=3000
+      - DATABASE_PATH=/app/data/store_meta.db
+      - LOG_LEVEL=info
+    volumes:
+      - store-data:/app/data
+    restart: always
+
+volumes:
+  store-data:
+    driver: local
